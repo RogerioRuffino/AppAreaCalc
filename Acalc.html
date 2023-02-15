@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Acalc.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <script src="https://kit.fontawesome.com/291aa0a235.js"></script> -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet"/> -->
+    <title>Document</title>
+</head>
+<!-- +++++++++++++++++++++++++++++++++++ -->
+<body>
+    <!-- +++++++++++++++++++++++++++++++++++ -->
+<body>
+    <div class="cab">
+    <img class="image" width="100px" src="Img/logomutum.jpg" alt="Reference image" />
+    <div class="title">Calculadora de Áreas<br></div><br>   
+    </div>       
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++  -->
+
+
+  <div class="converter">
+       
+        <!-- <div class="shape"> -->
+        <input id="shape" placeholder="Defina o formato da area">
+            <select class="select" id="formato" onclick="show()">
+                <option value="quad">  Quadrado </option>
+                <option value="ret"> Retangular</option>
+                <option value="cir">Circular ou Eliptico</option>
+                <option value="irr">Irregulares</option>
+                <option value="tri">Triangular</option>
+
+            </select> 
+      
+        <div class="imagem">
+            <img id="i0" src="Img/quadrado.jpg" width="35px" style="display:none;">
+            <img id="i1" src="Img/retangulo.jpg" width="35px" style="display:none;">
+            <img id="i2" src="Img/elipse.jpg" width="35px" style="display:none;">
+            <img id="i3" src="Img/irregular.jpg" width="35px" style="display:none;">
+            <img id="i4" src="Img/triangular.jpg" width="35px" style="display:none;">
+        </div> 
+       
+    
+    
+    
+<!-- ===================== Caluladora ======================== -->
+
+<div class="calculator">
+    <!-- <label class="labcon">Calcular</label><br> -->
+    
+    <div  id='qrc'  style="display:none;">
+        <label class="labcon">Calcular</label><br>
+        <input  type="text" placeholder="Digite o Valor" id="in1" name="input" onkeyup="numtostr(this.value,1)" >
+            <select class="select" id="entrada">
+                <option value="m1">m</option>
+            </select>
+
+         <input type="text" placeholder="Digite o Valor" id="in2" name="input" onkeyup="numtostr(this.value,2)">
+            <select class="select" id="entrada">
+            <option value="opP">m</option>
+            </select>
+    </div>
+
+    <div  id='tri'  style="display:none;">
+        
+        <input  type="text" placeholder="Digite o Valor" id="in3" name="input" onkeyup="numtostr(this.value,3)" >
+            <select class="select" id="entrada">
+                <option value="m1">m</option>
+            </select>
+    </div>
+    
+
+
+    <div  id='irr'  style="display:none;">
+        <input  type="text" placeholder="Digite o Valor" id="in4" name="input" onkeyup="numtostr(this.value,4)" >
+            <select class="select" id="entrada">
+                <option value="m1">m</option>
+            </select>
+        
+        <input type="text" placeholder="Digite o Valor" id="in5" name="input" onkeyup="numtostr(this.value,5)">
+            <select class="select" id="entrada">
+                <option value="">m</option>
+            </select>
+
+    </div>
+<!-- +++++++++++++++++++++++++++ Saida palets ++++++++++++++++++++++++++++++ -->        
+    <div>
+    <input type="text" placeholder="Resultado" id="result">
+        <select id="" class="select">
+            <option value="">m2</option>
+        </select><br>
+    </div>         
+  
+</div>
+</div>
+
+
+
+
+
+
+    
+     
+<script src="Acalc.js"></script>
+</body>
+</html>
