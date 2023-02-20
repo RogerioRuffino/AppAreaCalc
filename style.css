@@ -1,357 +1,167 @@
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Raleway:wght@100&family=Roboto:wght@100&family=Rowdies:wght@300&display=swap');
-* {
-    margin: 0;
-    padding:0;
-    box-sizing: border-box;
-    border:0;
-  }
-    
-  body {
-    background-color:rgb(247, 237, 237);
-    font-family: 'DynaPuff', cursive;  
-    margin-right: 3px;
-    font-family: 'Rowdies', cursive;
-    font-size:1.5rem;
-  }
-  .cab{
-    display:inline-flex;
-    background-color: rgb(69,106,65);
-    margin-top: 3px;
-    flex-wrap:wrap;
+*{
+  margin:0;
+  padding:0;
+  /* font-size: 1rem; */
+}
+
+.cab {
+
+    display: flex;
     justify-content: space-between;
-    align-items: center; 
-    width:100%;
-    height: 100px;
+    background-color: #333;
+    
+ 
   }
   
-    .title{
-      color:rgb(253,254,254);
-      text-shadow: aliceblue;
-      font-size: 4.5rem;
-      text-align: center;
-      align-items: center;
-      justify-content: space-between;
-    }
+  .cab .logo  {
+
+    align-self: center;
+   /* width:15%;  */
   
-    .cab img {
-      position:relative;
-      background-color: rgb(248, 249, 249);
-      border-radius: 5px;
-      height: 100%;
-      display:inline-flex;
-      margin-left: 3px;
   
-    }
- 
-    /* ============= Fim .cab  ================== */
-    /* ++++++++++++++++++++++++++++++++++++++++++ */
-    /* =========== inicio imagens fluantes ====== */
-    .shape{
-    position:relative;
-    }
-    .imagem  {
-      position: absolute;
-      border: 1px;
-      top:108px;
-      left:90%;
-      margin-right:-20%;
-      border: 1px rgb(31, 14, 14);
-      overflow: hidden;
-      width:40%;
-      height: 60%;
-    }
+  }
+  
+  .cab  .logo img {
+    padding-top: 4%;
+    padding-left: 2%;
+    /* height:15%; */
 
     
-    .imagem img {
-      max-width:fit-content;
-      -moz-transition: all 0.5s;
-      -webkit-transition: all 0.5s;
-      transition: all 0.5s;
-    }
-    .imagem:hover img {
-     -moz-transform: scale(1);
-      -webkit-transform: scale(1);
-      transform: scale(1); 
-      width: 80%;
-      
-    }
   
- 
-  .converter{
-    background-color: rgb(27, 152, 69);
-    margin-bottom: 10px;
-    width:100%;
-    padding-left: 3px;
   }
-  input{
+
+ .cab .title{   
+ 
+    color:red;
+    font-size:28px;
+    align-self: center;
+  }
+  
+#button {
+    background-color: #f7f3f3;
+    /* margin-right:5%; */
+   
+    /* height: 30vh; */
+  }
+  .btn img{
+    
+    margin-right:5%;/* height: 15vh; */
+  }
+  
+  
+
+  /* .btn img:hover {
+    transform:scale(2,1)
+    justify-content:space-between;
+
+  } */
+  
+  
+/*   
+  nav .menu-toggle {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #fff;
+    font-size: 24px;
+  } */
+
+  .converter{
+  
+    background-color: rgb(27, 152, 69);
+    margin-bottom: 100px;
+    padding-left: 3px;
+    }
+   /* .converter input .select{
+    margin-top:0;
+    display:flex;
+   } */
+    .qrc{
+      display:inline-flex;
+      vertical-align:super;
+    }
+    input{ 
+    margin-top:1%;   
     border-radius:5px;
     background-color: rgb(248, 249, 249);
-    width:65%;
+    width:60%;
     height: 40px;
-    border:1px darkgreen solid;
     text-align: center;
-    font-size: 2rem;
-    color:black;  
-  }
+    font-size: 1rem;
+    color:black; 
+    margin-bottom:1px; 
+    }
 
-  .select{
-    width:20%;
-    height: 40px;
-    border:1px rgb(28, 22, 22) solid;
-    border-radius:5px;
-    font-size: 2rem;
-  }
-
-  .labcon{
+    .select{
+      margin-top:0%;   
+      border-radius:5px;
+      background-color: rgb(248, 249, 249);
+      width:30%;
+      height: 44px;
+      text-align: center;
+      color:rgb(143, 65, 65); 
+      margin-bottom:0px;
+    }
+    
+    .labcon{
     width:120px;
     color:white;
     font-size: 2rem;
-    text-align: justify;
-    border-radius: 5px;
-    padding-bottom: 01px; 
+    text-align: center;
+    padding-bottom: 1px; 
     padding-left:2px; 
-  }
-
-/* ========================================================================== */
-/* -------------------Display responsiove celular--------------------------- */
-/* ========================================================================== */
- @media screen and (max-width:1635px)  {
-  .title{
-    font-size: 3.5rem;
-  }
-
-  .shape{
-    position:relative;
-
     }
-    .imagem  {
-      position: absolute;
-      border: 1px;
-      top:108px;
-      left:89%;
-      
-    }
-
-    .imagem:hover img {
-      width: 85%; 
-    }
-
-
-
-  input{
-
-    width:65%;
-
-  }
-  .selico{
-    width:23%;
-  }
-
-  .select{
-    width:23%;
-    height: 40px;
-    border:1px rgb(28, 22, 22) solid;
-    border-radius:5px;
-    font-size: 2rem;
-  }
-
-
-}
-/* ================================================================== */
-@media screen and (max-width:1301px)  {
-  
-  .shape{
-    position:relative;
-
-    }
-    .imagem  {
-      position: absolute;
-      border: 1px;
-      top:108px;
-      left:83%;
-      margin-right:-20%;
-      border: 1px rgb(31, 14, 14);
-      overflow: hidden;
-      width:60%;
-  
-    }
-
-    .imagem:hover img {
-      width: 100%; 
-    }
-
-
-
-  input{
-
-    width:65%;
-
-  }
- .selico{
-  width:17%;
- }
-  .select{
-    width:17%;
-    height: 40px;
-    border:1px rgb(28, 22, 22) solid;
-    border-radius:5px;
-    font-size: 1.3rem;
-  }
-
-
-}
-/* ================================================================== */
-@media screen and (max-width:865px)  {
-  .title{
-    font-size:1.3rem;
-  }
-  .shape{
-    position:relative;
-
-    }
-    .imagem  {
-      position: absolute;
-      border: 1px;
-      top:108px;
-      left:78%;
-      margin-right:-20%;
-      border: 1px rgb(31, 14, 14);
-      overflow: hidden;
-      width:30%;
-  
-    }
-
-    .imagem:hover img {
-      width: 55%; 
-    }
-
-  input{
-
-    width:55%;
-    font-size: 1rem;
-  }
-
-
-
-  .select{
-    width:20%;
-    font-size: 1rem;
-    height: 40px;
-    border:1px rgb(28, 22, 22) solid;
-    border-radius:5px;
     
-  }
 
+  /* ============================================================================================= */
+  /* Media Queries */
+  /* --------------------------------------------------------------------------------------- */
 
-}
-/* ================================================================== */
-@media screen and (max-width:521px)  {
-  .title{
-    font-size:1.2rem;
-  }
-  
-  .shape{
-    position:relative;
+  @media (max-width: 670px) { 
 
-    }
-    .imagem  {
-      position: absolute;
-      border: 1px;
-      top:108px;
-      left:77%;
-      margin-right:-20%;
-      border: 1px rgb(31, 14, 14);
-      overflow: hidden;
-      width:40%;
-  
-    }
-
-    .imagem:hover img {
-      width: 55%; 
      
-    }
-
-
-
-  input{
-
-    width:45%;
-    font-size: 0.7rem;
+  .cab  .logo img {
+    padding-top: 4%;
+    padding-left: 2%;
 
   }
+    .cab .title{ 
 
-  .selico{
-    width:25%;
-  
-  }
-
-  .select{
-    width:29%;
-    font-size: 0.8rem;
-    height: 40px;
-    border:1px rgb(28, 22, 22) solid;
-    border-radius:5px;
  
-  }
-
-
-}
-/* ================================================================== */
-@media screen and (max-width:310px)  {
-  .title{
-    font-size:1.1rem;
-  }
-  
-  .shape{
-    position:relative;
-
+      color:red;
+      font-size:18px;
+      align-self: center;
     }
-    .imagem  {
-      position: absolute;
-      border: 1px;
-      top:108px;
-      left:83%;
-      margin-right:-20%;
-      border: 1px rgb(31, 14, 14);
-      overflow: hidden;
-      width:40%;
-  
+    .btn img{
+      width:100%;
+      align-content:center;
+    
     }
 
-    .imagem:hover img {
-      width: 40%;
-      height: 60; 
-     
+    input{ 
+      margin-top:1%;   
+      border-radius:5px;
+      background-color: rgb(248, 249, 249);
+      width:65%;
+      height: 40px;
+      text-align: center;
+      font-size: 0.7rem;
+      color:black; 
+      margin-bottom:1px; 
+      }
+
+    .select{
+      margin-top:0%;   
+      border-radius:5px;
+      background-color: rgb(248, 249, 249);
+      width:30%;
+      height: 44px;
+      text-align: center;
+      color:rgb(46, 9, 97); 
+      margin-bottom:0px;
+      font-size: 0.5rem;
     }
 
-
-
-  input{
-
-    width:50%;
-    font-size: 0.7rem;
-
-  }
-
   
-  .select{
-    width:30%;
-    font-size:0.7rem;
-    height: 40px;
-    border:1px rgb(28, 22, 22) solid;
-    border-radius:5px;
-
   }
-
-
-}
-/* ================================================================== */
-
-
-
-
-
-
-
-
-
