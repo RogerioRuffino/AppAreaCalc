@@ -12,97 +12,126 @@
 </head>
 <!-- +++++++++++++++++++++++++++++++++++ -->
 <body>
-    <!-- +++++++++++++++++++++++++++++++++++ -->
-<body>
     <div class="cab">
-    <img class="image" width="100px" src="Img/logomutum.jpg" alt="Reference image" />
-    <div class="title">Calculadora de Áreas<br></div><br>   
-    </div>       
-  <!-- ++++++++++++++++++++++++++++++++++++++++++++++  -->
+        <img class="image" width="100px"  height="100px" src="Img/logomutum.jpg" alt="Reference image" />
+        <div class="title">Calculadora de Áreas<br>
+            <h6> Regulares e Irregulares</h6>
+        </div><br>
+        <button  class="btn">
+            <a href="#" >
+                <img id="i0"  src="Img/quadrado.jpg" width="100px" height="100px"  style="display:none;">
+            </a>
+            <a href="#" >
+                <img id="i1" src="Img/retangulo.jpg" width="100px" height="100px"  style="display:none;">
+            </a>
+            <a href="#" >
+                <img id="i2" src="Img/elipse.jpg" width="100px" height="100px" style="display:none;">
+            </a>
+            <a href="#" >
+                <img id="i3" src="Img/irregularH.jpg"  width="180px"  height="100px" style="display:none;">
+            </a>
+            <a href="#" >
+                <img id="i4" src="Img/triangulo.jpg" width="100px" height="100px" style="display:none;">
+            </a>
+        
+        </button>   
+    </div>    
+    <!-- <nav>
+        <a href="#" class="logo"><img src="/AppAreaCalc/Img/logomutum.jpg" alt="Logo"></a>
+    <div class="title">Grameira Mutum<br>
+            <h6>Conversor</h6>
+    
 
+        <button class="btn">
+            <a href="#" >
+                <img id="i0" src="Img/quadrado.jpg" style="display:none;">
+            </a>
+            <a href="#" >
+                <img id="i1" src="Img/retangulo.jpg"  style="display:none;">
+            </a>
+            <a href="#" >
+                <img id="i2" src="Img/elipse.jpg"  style="display:none;">
+            </a>
+            <a href="#" >
+                <img id="i3" src="Img/irregularH.jpg"  style="display:none;">
+            </a>
+            <a href="#" >
+                <img id="i4" src="Img/triangulo.jpg"  style="display:none;">
+            </a>
+        </button>    
+
+    </div>
+     
+        <div class="menu-toggle" style="display:none;">
+          <i class="fas fa-bars"></i>
+        </div>
+    </nav> -->
 
   <div class="converter">
-       
-        <!-- <div class="shape"> -->
-        <input id="shape" placeholder="Defina o formato da area">
-            <select class="select" id="formato" onclick="show()">
-                <option value="quad">  Quadrado </option>
-                <option value="ret"> Retangular</option>
-                <option value="cir">Circular ou Eliptico</option>
-                <option value="irr">Irregulares</option>
-                <option value="tri">Triangular</option>
+   
+    <!-- <div class="shape"> -->
+    <input id="shape" placeholder="Defina o formato da area">
+        <select class="select" id="formato" onclick="show()">
+            <option value="quad">  Quadrado </option>
+            <option value="ret"> Retangular</option>
+            <option value="cir">Circular ou Eliptico</option>
+            <option value="irr">Irregulares</option>
+            <option value="tri">Triangular</option>
+        </select><br> 
 
-            </select> 
-      
-        <div class="imagem">
-            <img id="i0" src="Img/quadrado.jpg" width="35px" style="display:none;">
-            <img id="i1" src="Img/retangulo.jpg" width="35px" style="display:none;">
-            <img id="i2" src="Img/elipse.jpg" width="35px" style="display:none;">
-            <img id="i3" src="Img/irregular.jpg" width="35px" style="display:none;">
-            <img id="i4" src="Img/triangular.jpg" width="35px" style="display:none;">
-        </div> 
-       
-    
-    
     
 <!-- ===================== Caluladora ======================== -->
 
-<div class="calculator">
-    <!-- <label class="labcon">Calcular</label><br> -->
+<!-- <div class="calculator"> -->
+<label class="labcon">Calcular</label><br>
+
+<div  id='qrc'  style="display:none;">
     
-    <div  id='qrc'  style="display:none;">
-        <label class="labcon">Calcular</label><br>
-        <input  type="text" placeholder="Digite o Valor" id="in1" name="input" onkeyup="numtostr(this.value,1)" >
-            <select class="select" id="entrada">
-                <option value="m1">m</option>
-            </select>
+    <input  type="text" placeholder="Digite o Valor" id="in1" name="input" onkeyup="numtostr(this.value,1)" >
+        <select class="select" id="entrada">
+            <option value="m1">m</option>
+        </select>
+<span></span>
+     <input type="text" placeholder="Digite o Valor" id="in2" name="input" onkeyup="numtostr(this.value,2)">
+        <select class="select" id="entrada">
+        <option value="opP">m</option>
+        </select>
+</div>
 
-         <input type="text" placeholder="Digite o Valor" id="in2" name="input" onkeyup="numtostr(this.value,2)">
-            <select class="select" id="entrada">
-            <option value="opP">m</option>
-            </select>
-    </div>
 
-    <div  id='tri'  style="display:none;">
-        
-        <input  type="text" placeholder="Digite o Valor" id="in3" name="input" onkeyup="numtostr(this.value,3)" >
-            <select class="select" id="entrada">
-                <option value="m1">m</option>
-            </select>
-    </div>
+<div  id='tri'  style="display:none;">
     
+    <input  type="text" placeholder="Digite o Valor" id="in3" name="input" onkeyup="numtostr(this.value,3)" >
+        <select class="select" id="entrada">
+            <option value="m1">m</option>
+        </select>
+</div>
 
 
-    <div  id='irr'  style="display:none;">
-        <input  type="text" placeholder="Digite o Valor" id="in4" name="input" onkeyup="numtostr(this.value,4)" >
-            <select class="select" id="entrada">
-                <option value="m1">m</option>
-            </select>
-        
-        <input type="text" placeholder="Digite o Valor" id="in5" name="input" onkeyup="numtostr(this.value,5)">
-            <select class="select" id="entrada">
-                <option value="">m</option>
-            </select>
 
-    </div>
+<div  id='irr'  style="display:none;">
+    <input  type="text" placeholder="Digite o Valor" id="in4" name="input" onkeyup="numtostr(this.value,4)" >
+        <select class="select" id="entrada">
+            <option value="m1">m</option>
+        </select>
+    
+    <input type="text" placeholder="Digite o Valor" id="in5" name="input" onkeyup="numtostr(this.value,5)">
+        <select class="select" id="entrada">
+            <option value="">m</option>
+        </select>
+
+</div>
 <!-- +++++++++++++++++++++++++++ Saida palets ++++++++++++++++++++++++++++++ -->        
-    <div>
-    <input type="text" placeholder="Resultado" id="result">
-        <select id="" class="select">
-            <option value="">m2</option>
-        </select><br>
-    </div>         
-  
+<div>
+<input type="text" placeholder="Resultado" id="result">
+    <select id="" class="select">
+        <option value="">m2</option>
+    </select><br>
+</div>         
+
 </div>
-</div>
 
-
-
-
-
-
-    
-     
+ 
 <script src="script.js"></script>
 </body>
 </html>
