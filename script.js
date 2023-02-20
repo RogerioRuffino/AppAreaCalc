@@ -141,6 +141,7 @@ function show() {
 
   if (option_from === "quad") {
       clearLines('qrc');
+      clearImg();
       imagem.src = pic[0];
       document.getElementById("i0").style.display = 'block';
      
@@ -150,7 +151,8 @@ function show() {
           
           
   if (option_from === "ret") {
-      imagem.src = pic[1]; 
+     clearImg();
+     imagem.src = pic[1]; 
       document.getElementById('i1').style.display = 'block';
 
       document.getElementById("in1").placeholder = "Lado Maior";
@@ -158,6 +160,7 @@ function show() {
   }
   
   if (option_from === "cir") {
+      clearImg();
       imagem.src = pic[2];
       document.getElementById("i2").style.display = 'block';
 
@@ -167,6 +170,7 @@ function show() {
           
   if (option_from === "irr") {
       // clearLines("irr");
+      clearImg();
       imagem.src = pic[3];
       document.getElementById('i3').style.display = 'block';
       clearLines('irr');
@@ -178,7 +182,8 @@ function show() {
   
   }
   if (option_from === "tri") {
-     imagem.src = pic[4];
+      clearImg();
+      imagem.src = pic[4];
      document.getElementById("i4").style.display = 'block';
      clearLines('tri');
      document.getElementById("in1").placeholder = "Lado 1";
