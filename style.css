@@ -9,8 +9,6 @@
     display: flex;
     justify-content: space-between;
     background-color: #333;
-    
- 
   }
   
   .cab .logo  {
@@ -32,9 +30,10 @@
 
  .cab .title{   
  
-    color:red;
-    font-size:28px;
+    color: white;
+    font-size:38px;
     align-self: center;
+    text-align: center;
   }
   
 #button {
@@ -127,9 +126,6 @@
 
   }
     .cab .title{ 
-
- 
-      color:red;
       font-size:18px;
       align-self: center;
     }
