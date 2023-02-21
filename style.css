@@ -2,13 +2,31 @@
   margin:0;
   padding:0;
   /* font-size: 1rem; */
+  border:0;
+}
+
+body {
+  background-color:rgb(247, 237, 237);
+  width:100%;
+  font-family: 'Rowdies';
+  font-size:14px;
 }
 
 .cab {
 
-    display: flex;
-    justify-content: space-between;
-    background-color: #333;
+  display: inline-flex;
+  justify-content: space-between;
+  background-color: #333;
+   display:inline-flex;
+  background-color: rgb(69,106,65);
+  padding-left:3px;
+  padding-top:3px;
+  padding-bottom: 3px;
+  margin-bottom: 10px;
+  width:98%;
+  /* flex-wrap:wrap;
+  justify-content: space-between;
+  align-items: center; */
   }
   
   .cab .logo  {
@@ -31,51 +49,49 @@
  .cab .title{   
  
     color: white;
-    font-size:38px;
+    font-size:48px;
     align-self: center;
     text-align: center;
   }
-  
-#button {
-    background-color: #f7f3f3;
+  .btn {
+    background-color: #110c0c;
+    width:100px;
+    border:none;
     /* margin-right:5%; */
-   
     /* height: 30vh; */
   }
   .btn img{
-    
-    margin-right:5%;/* height: 15vh; */
+    border:none;
+    margin-right:5%;
+  }
+  .b1 {
+    margin-right: 3%;
+    height: 15%;
+    align-self: center;
+    background-color: #24362b;
+    color: white;
+    padding: 8px 8px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 3px 5px #199f19;
+    transition-duration: 0.3s;
   }
   
+  .b1:hover {
+    background-color: #4b5f27;
+  }
+  .b1:active {
+    box-shadow: none;
+    transform: translateY(10px);
+  }
   
-
-  /* .btn img:hover {
-    transform:scale(2,1)
-    justify-content:space-between;
-
-  } */
-  
-  
-/*   
-  nav .menu-toggle {
-    display: none;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    color: #fff;
-    font-size: 24px;
-  } */
-
   .converter{
   
     background-color: rgb(27, 152, 69);
     margin-bottom: 100px;
     padding-left: 3px;
     }
-   /* .converter input .select{
-    margin-top:0;
-    display:flex;
-   } */
+
     .qrc{
       display:inline-flex;
       vertical-align:super;
@@ -84,7 +100,7 @@
     margin-top:1%;   
     border-radius:5px;
     background-color: rgb(248, 249, 249);
-    width:60%;
+    width:65%;
     height: 40px;
     text-align: center;
     font-size: 1rem;
@@ -97,7 +113,7 @@
       border-radius:5px;
       background-color: rgb(248, 249, 249);
       width:30%;
-      height: 44px;
+      height: 40px;
       text-align: center;
       color:rgb(143, 65, 65); 
       margin-bottom:0px;
@@ -106,7 +122,7 @@
     .labcon{
     width:120px;
     color:white;
-    font-size: 2rem;
+    font-size: 3rem;
     text-align: center;
     padding-bottom: 1px; 
     padding-left:2px; 
@@ -117,23 +133,44 @@
   /* Media Queries */
   /* --------------------------------------------------------------------------------------- */
 
-  @media (max-width: 670px) { 
+  @media (max-width: 870px) { 
 
-     
+/*      
   .cab  .logo img {
     padding-top: 4%;
     padding-left: 2%;
 
-  }
+  } */
     .cab .title{ 
-      font-size:18px;
-      align-self: center;
+      font-size:28px;
+      /* align-self: center; */
     }
     .btn img{
-      width:100%;
-      align-content:center;
+      width:150%;
+      /* align-content:center; */
     
     }
+    .b1 {
+      margin-right: 3%;
+      height: 15%;
+      align-self: center;
+      background-color: #24362b;
+      color: white;
+      padding: 8px 8px;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 3px 5px #199f19;
+      transition-duration: 0.3s;
+    }
+    
+    .b1:hover {
+      background-color: #4b5f27;
+    }
+    .b1:active {
+      box-shadow: none;
+      transform: translateY(10px);
+    }
+    
 
     input{ 
       margin-top:1%;   
@@ -142,7 +179,7 @@
       width:65%;
       height: 40px;
       text-align: center;
-      font-size: 0.7rem;
+      font-size: 1rem;
       color:black; 
       margin-bottom:1px; 
       }
@@ -152,12 +189,150 @@
       border-radius:5px;
       background-color: rgb(248, 249, 249);
       width:30%;
-      height: 44px;
+      height: 40px;
       text-align: center;
       color:rgb(46, 9, 97); 
       margin-bottom:0px;
-      font-size: 0.5rem;
+      font-size: 1rem;
     }
 
   
   }
+/* =================================================== */
+  @media (max-width: 625px) { 
+
+    /*      
+      .cab  .logo img {
+        padding-top: 4%;
+        padding-left: 2%;
+    
+      } */
+        .cab .title{ 
+          font-size:20px;
+          /* align-self: center; */
+        }
+        .btn img{
+          width:150%;
+          /* align-content:center; */
+        
+        }
+        .b1 {
+          margin-right: 3%;
+          height: 15%;
+          align-self: center;
+          background-color: #24362b;
+          color: white;
+          padding: 8px 8px;
+          border: none;
+          border-radius: 5px;
+          box-shadow: 3px 5px #199f19;
+          transition-duration: 0.3s;
+        }
+        
+        .b1:hover {
+          background-color: #4b5f27;
+        }
+        .b1:active {
+          box-shadow: none;
+          transform: translateY(10px);
+        }
+        
+    
+        input{ 
+          margin-top:1%;   
+          border-radius:5px;
+          background-color: rgb(248, 249, 249);
+          width:65%;
+          height: 40px;
+          text-align: center;
+          font-size: 1rem;
+          color:black; 
+          margin-bottom:0.7px; 
+          }
+    
+        .select{
+          margin-top:0%;   
+          border-radius:5px;
+          background-color: rgb(248, 249, 249);
+          width:30%;
+          height: 40px;
+          text-align: center;
+          color:rgb(46, 9, 97); 
+          margin-bottom:0px;
+          font-size: 1rem;
+        }
+    
+      
+      }
+      /* =================================================== */
+  @media (max-width: 560px) { 
+
+    /*      
+      .cab  .logo img {
+        padding-top: 4%;
+        padding-left: 2%;
+    
+      } */
+        .cab .title{ 
+          font-size:0.8rem;
+          /* align-self: center; */
+        }
+        .cab img{
+          width:20%;
+          height: 20%;
+        }
+        .cab .btn img{
+          width:100%;
+          height: 100%;
+        
+        }
+        .b1 {
+          margin-right: 1%;
+          width:14%;
+          height: 12%;
+          align-self: center;
+          background-color: #24362b;
+          color: white;
+          padding: 8px 8px;
+          border: none;
+          border-radius: 5px;
+          box-shadow: 3px 5px #199f19;
+          transition-duration: 0.3s;
+          font-size:smaller;
+        }
+        
+        .b1:hover {
+          background-color: #4b5f27;
+        }
+        .b1:active {
+          box-shadow: none;
+          transform: translateY(10px);
+        }
+        
+    
+        input{ 
+          margin-top:1%;   
+          border-radius:5px;
+          background-color: rgb(248, 249, 249);
+          width:65%;
+          height: 40px;
+          text-align: center;
+          font-size: 1rem;
+          color:black; 
+          margin-bottom:0.7px; 
+          }
+    
+        .select{
+          margin-top:0%;   
+          border-radius:5px;
+          background-color: rgb(248, 249, 249);
+          width:30%;
+          height: 40px;
+          text-align: center;
+          color:rgb(46, 9, 97); 
+          margin-bottom:0px;
+          font-size: 1rem;
+        }
+    
+      
+      }
