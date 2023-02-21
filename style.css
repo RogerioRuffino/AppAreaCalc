@@ -16,7 +16,6 @@ body {
 
   display: inline-flex;
   justify-content: space-between;
-  background-color: #333;
    display:inline-flex;
   background-color: rgb(69,106,65);
   padding-left:3px;
@@ -54,7 +53,8 @@ body {
     text-align: center;
   }
   .btn {
-    background-color: #110c0c;
+
+    background-color: rgb(69,106,65);
     width:100px;
     border:none;
     /* margin-right:5%; */
@@ -278,7 +278,7 @@ body {
           /* align-self: center; */
         }
         .cab img{
-          width:30%;
+          width:25%;
          
         }
         .cab .btn img{
