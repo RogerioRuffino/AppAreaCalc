@@ -10,7 +10,7 @@ const callButton = document.getElementById('call-program');
 callButton.addEventListener('click', () => {
   // code to call another program
   // for example, redirect to another HTML page:
-  window.location.href = '/GramaConversor/index.html';
+  window.location.href = 'https://github.com/RogerioRuffino/GrameiraMutum/blob/main/index.html';
 });
 
 
