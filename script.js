@@ -293,7 +293,16 @@ function show() {
         // semiPerimetro = sP (l1+l2+l3)/2;
         // Area Triangulo Heron = Math.sqrt(sP(sP-l1)(sP)(sP))
         var faixaIrr = calcularComprimentoMinMax(in1TN, in2TN);
-        resultado.value = JSON.stringify(faixaIrr);
+        var faixaIrrV =  JSON.stringify(faixaIrr);
+        let v1 = faixaIrr.minimo__;
+        let v2 = faixaIrr.maximo__;
+        // resultado.value = v1 + " " +v2;
+        resultado.value = faixaIrrV;
+
+         if ( in5TN !==0 && in5TN <v1 || in5TN > v2 ) {
+        resultado.value = "Medida hipotenusa errada";
+         }
+        else 
 
         if (in1TN !== 0 && in2TN !== 0 && in3TN !== 0 && in4TN !== 0 && in5TN !== 0){
         
@@ -302,12 +311,14 @@ function show() {
 
           var sPT1TN = (in1TN/2 + in2TN/2 + in5TN/2);   
            var aT1 = (sPT1TN*((sPT1TN-in1TN)*(sPT1TN-in2TN)*(sPT1TN-in5TN)));
+         
           var areaT1 = Math.sqrt(aT1);
 
           var sPT2TN = (in3TN/2 + in4TN/2 + in5TN/2);
           var aT2 = (sPT2TN*(sPT2TN-in3TN)*(sPT2TN-in4TN)*(sPT2TN-in5TN));
           var areaT2 = Math.sqrt(aT1);
           var aTotal = (areaT1 + areaT2);
+        
 
           var aTotBr = numberToBr(aTotal);
           resultado.value = (aTotBr);
@@ -331,16 +342,22 @@ function show() {
         
            var aT1 = (sPT1TN*((sPT1TN-in1TN)*(sPT1TN-in2TN)*(sPT1TN-in3TN)));
            var areaT1 = (Math.sqrt(aT1)).toFixed(2);
+           if (aT1 <= 0) {
+            resultado.value = "Medida Lado3 Errada";
+           }
+           else 
+
+
             // var areaT1Br = numtobr(areaT1);
             // var aT2 = (sPT2TN*(sPT2TN-in3TN)*(sPT2TN-in4TN)*(sPT2TN-in5TN));
             // var areaT2 = Math.sqrt(aT1);
             // var aTotal = areaT1 + areaT2;
             // resultado.value = aT1;
           
-            resultado.value = areaT1;
+            resultado.value = aT1;
           
   
-      
+
       
       }
     }
