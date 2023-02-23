@@ -10,7 +10,7 @@ const callButton = document.getElementById('call-program');
 callButton.addEventListener('click', () => {
   // code to call another program
   // for example, redirect to another HTML page:
-  window.location.href = '/GrameiraMutum/index.html';
+  window.location.href = '/GramaConversor/index.html';
 });
 
 
@@ -115,27 +115,86 @@ function getCollection(){
 
  //============== function numtostr ====================
 
- function numtostr(str,n) {
-
-    var elemento = document.getElementsByTagName('input')[n];
-    var valor = elemento.value;
-
-    valor = valor + '';
-    valor = parseInt(valor.replace(/[\D]+/g, ''));
-    valor = valor + '';
-    valor = valor.replace(/([0-9]{2})$/g, ",$1");
-
-    if (valor.length > 6) {
-      valor = valor.replace(/([0-9]{3}),([0-9]{2}$)/g, ".$1,$2");  
-    }
-
-    elemento.value = valor;
-    if(valor == 'NaN') elemento.value = '';
+ function numtostr(a, e, r, t) {
+  let n = ""
+    , h = j = 0
+    , u = tamanho2 = 0
+    , l = ajd2 = ""
+    , o = window.Event ? t.which : t.keyCode;
+  if (13 == o || 8 == o)
+      return !0;
+  if (n = String.fromCharCode(o),
+  -1 == "0123456789".indexOf(n))
+      return !1;
+  for (u = a.value.length,
+  h = 0; h < u && ("0" == a.value.charAt(h) || a.value.charAt(h) == r); h++)
+      ;
+  for (l = ""; h < u; h++)
+      -1 != "0123456789".indexOf(a.value.charAt(h)) && (l += a.value.charAt(h));
+  if (l += n,
+  0 == (u = l.length) && (a.value = ""),
+  1 == u && (a.value = "0" + r + "0" + l),
+  2 == u && (a.value = "0" + r + l),
+  u > 2) {
+      for (ajd2 = "",
+      j = 0,
+      h = u - 3; h >= 0; h--)
+          3 == j && (ajd2 += e,
+          j = 0),
+          ajd2 += l.charAt(h),
+          j++;
+      for (a.value = "",
+      tamanho2 = ajd2.length,
+      h = tamanho2 - 1; h >= 0; h--)
+          a.value += ajd2.charAt(h);
+      a.value += r + l.substr(u - 2, u)
+  }
+  return !1
 }
+
+
+
+//  function numtostr(str,n) {
+
+//     var elemento = document.getElementsByTagName('input')[n];
+//     var valor = (elemento.value);
+    
+
+//     valor = valor + "";
+//     valor = parseInt(valor.replace(/[\D]+/g, ''));
+//     valor = valor + '';
+//     valor = valor.replace(/([0-9]{2})$/g, ",$1");
+
+//     if (valor.length > 6) {
+//       valor = valor.replace(/([0-9]{3}),([0-9]{2}$)/g, ".$1,$2");  
+//     }
+
+//     elemento.value = valor;
+//     if(valor == 'NaN') elemento.value = '';
+// }
+// =============== function Faixa terceiro lado triangulo  =======================
+
+function calcularComprimentoMinMax(lado1, lado2) {
+  var comprimentoMinimo = Math.abs(lado1 - lado2) + 1;
+  var comprimentoMaximo = lado1 + lado2 - 1
+  
+  return { minimo__:  comprimentoMinimo.toFixed(1),      maximo__: comprimentoMaximo.toFixed(2) };
+ 
+}
+
+ //============== function ====================
+
+
+function retornarObjeto() {
+  return { nome: "João", idade: 25 };
+}
+
+
+
  //============== function numtostr ====================
- function calcHypotenuse(a, b) {
-  hTN =( Math.sqrt((a * a) + (b * b)));
-  return hTN.toFixed(2)
+   function calcHypotenuse(a, b) {
+   hTN =( Math.sqrt((a * a) + (b * b)));
+   return hTN.toFixed(2)
 }
  //============== function numtostr ====================
 
@@ -172,7 +231,7 @@ function show() {
       imagem.src = pic[2];
       document.getElementById("i2").style.display = 'block';
 
-      document.getElementById("in1").placeholder = "Diametro Maior";
+      document.getElementById("in1").placeholder = "Diametro Menor";
       document.getElementById("in2").placeholder = "Diametro Maior";
   }
           
@@ -186,7 +245,7 @@ function show() {
       document.getElementById("in2").placeholder = "Lado 2";
       document.getElementById("in3").placeholder = "Lado 3";
       document.getElementById("in4").placeholder = "Lado 4";
-      document.getElementById("in5").placeholder = "Diagonal Maior";
+      document.getElementById("in5").placeholder = "Hipotenusa";
   
   }
   if (option_from === "tri") {
@@ -233,6 +292,8 @@ function show() {
         // perimetroTiangulo = l1+l2+l3;
         // semiPerimetro = sP (l1+l2+l3)/2;
         // Area Triangulo Heron = Math.sqrt(sP(sP-l1)(sP)(sP))
+        var faixaIrr = calcularComprimentoMinMax(in1TN, in2TN);
+        resultado.value = JSON.stringify(faixaIrr);
 
         if (in1TN !== 0 && in2TN !== 0 && in3TN !== 0 && in4TN !== 0 && in5TN !== 0){
         
@@ -240,15 +301,16 @@ function show() {
 
 
           var sPT1TN = (in1TN/2 + in2TN/2 + in5TN/2);   
-          var aT1 = (sPT1TN*((sPT1TN-in1TN)*(sPT1TN-in2TN)*(sPT1TN-in5TN)));
+           var aT1 = (sPT1TN*((sPT1TN-in1TN)*(sPT1TN-in2TN)*(sPT1TN-in5TN)));
           var areaT1 = Math.sqrt(aT1);
 
           var sPT2TN = (in3TN/2 + in4TN/2 + in5TN/2);
           var aT2 = (sPT2TN*(sPT2TN-in3TN)*(sPT2TN-in4TN)*(sPT2TN-in5TN));
           var areaT2 = Math.sqrt(aT1);
-          var aTotal = areaT1 + areaT2
-        
-          resultado.value = aTotal.toFixed(2);
+          var aTotal = (areaT1 + areaT2);
+
+          var aTotBr = numberToBr(aTotal);
+          resultado.value = (aTotBr);
         
 
         }}
@@ -258,27 +320,28 @@ function show() {
           // perimetroTiangulo = l1+l2+l3;
           // semiPerimetro = sP (l1+l2+l3)/2;
           // Area Triangulo Heron = Math.sqrt(sP(sP-l1)(sP)(sP))
-  
-          if (in1TN !== 0 && in2TN !== 0 && in3TN !== 0){
-          
-            // var hTN = Math.hypot(parseFloat(in1TN), parseFloat(in2TN));
-  
-  
-            var sPT1TN = (in1TN/2 + in2TN/2 + in3TN/2);   
+          var faixaTri = calcularComprimentoMinMax(in1TN, in2TN);
+          resultado.value = JSON.stringify(faixaTri);
          
-  
-            var sPT2TN = (in3TN/2 + in4TN/2 + in3TN/2);
-            var aT1 = (sPT1TN*((sPT1TN-in1TN)*(sPT1TN-in2TN)*(sPT1TN-in3TN)));
-            var areaT1 = Math.sqrt(aT1);
+          if (in1TN !== 0 && in2TN !== 0 && in3TN !== 0){
+
+           var PT1TN  = (in1TN + in2TN + in3TN);
+           var sPT1TN = (PT1TN/2);
+             
+        
+           var aT1 = (sPT1TN*((sPT1TN-in1TN)*(sPT1TN-in2TN)*(sPT1TN-in3TN)));
+           var areaT1 = (Math.sqrt(aT1)).toFixed(2);
+            // var areaT1Br = numtobr(areaT1);
             // var aT2 = (sPT2TN*(sPT2TN-in3TN)*(sPT2TN-in4TN)*(sPT2TN-in5TN));
             // var areaT2 = Math.sqrt(aT1);
-            // var aTotal = areaT1 + areaT2
+            // var aTotal = areaT1 + areaT2;
+            // resultado.value = aT1;
           
-            resultado.value = areaT1.toFixed(2);
+            resultado.value = areaT1;
           
   
       
       
-      }}
+      }
     }
-  
+  }
