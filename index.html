@@ -19,7 +19,7 @@
         </div>
         <button  class="btn">
             <a href="#" >
-                <img id="i0"  src="Img/quadrado.jpg" width="100px" height="100px"  style="display:none;">
+                <img id="i0"  src="Img/quadrado.jpg" width="100px" height="100px"  style="display:non;">
             </a>
             <a href="#" >
                 <img id="i1" src="Img/retangulo.jpg" width="180px" height="100px"  style="display:none;">
@@ -89,12 +89,12 @@
 
 <div  id='qrc'  style="display:none;">
     
-    <input  type="text" placeholder="Digite o Valor" id="in1" name="input" onkeyup="numtostr(this.value,1)" >
+    <input  type="text" placeholder="Digite o Valor" id="in1" name="input" onKeyPress="return(numtostr(this,'.',',',event))">
         <select class="select" id="entrada">
             <option value="m1">m</option>
         </select>
 <span></span>
-     <input type="text" placeholder="Digite o Valor" id="in2" name="input" onkeyup="numtostr(this.value,2)">
+     <input type="text" placeholder="Digite o Valor" id="in2" name="input" onKeyPress="return(numtostr(this,'.',',',event))">
         <select class="select" id="entrada">
         <option value="opP">m</option>
         </select>
@@ -103,7 +103,7 @@
 
 <div  id='tri'  style="display:none;">
     
-    <input  type="text" placeholder="Digite o Valor" id="in3" name="input" onkeyup="numtostr(this.value,3)" >
+    <input  type="text" placeholder="Digite o Valor" id="in3" name="input" onKeyPress="return(numtostr(this,'.',',',event))">
         <select class="select" id="entrada">
             <option value="m1">m</option>
         </select>
@@ -112,12 +112,12 @@
 
 
 <div  id='irr'  style="display:none;">
-    <input  type="text" placeholder="Digite o Valor" id="in4" name="input" onkeyup="numtostr(this.value,4)" >
+    <input  type="text" placeholder="Digite o Valor" id="in4" name="input" onKeyPress="return(numtostr(this,'.',',',event))">
         <select class="select" id="entrada">
             <option value="m1">m</option>
         </select>
     
-    <input type="text" placeholder="Digite o Valor" id="in5" name="input" onkeyup="numtostr(this.value,5)">
+    <input type="text" placeholder="Digite o Valor" id="in5" name="input" onKeyPress="return(numtostr(this,'.',',',event))">
         <select class="select" id="entrada">
             <option value="">m</option>
         </select>
