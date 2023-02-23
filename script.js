@@ -6,13 +6,13 @@ let in4 = document.getElementById('in4');
 let in5 = document.getElementById('in5');
 const resultado = document.getElementById('result');
 
+
 const callButton = document.getElementById('call-program');
 callButton.addEventListener('click', () => {
   // code to call another program
   // for example, redirect to another HTML page:
-    window.location.href = '/GrameiraMutum/index.html';
+  window.location.href = '/GrameiraMutum/index.html';
 });
-
 
 let formato = document.getElementById('formato');
 option_from = formato.value;
