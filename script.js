@@ -147,11 +147,11 @@ function getCollection(){
       tamanho2 = ajd2.length,
       h = tamanho2 - 1; h >= 0; h--)
           a.value += ajd2.charAt(h);
-      a.value += r + l.substr(u - 2, u)
+      a.value += r + l.substring(u - 2, u)
   }
   return !1
 }
-
+//---------------------------------------------------------------------------
 
 
 //  function numtostr(str,n) {
