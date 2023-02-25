@@ -10,7 +10,7 @@ const callButton = document.getElementById('call-program');
 callButton.addEventListener('click', () => {
   // code to call another program
   // for example, redirect to another HTML page:
-  window.location.href = '/GrameiraMutum/index.html';
+  window.location.href = '/GrameiraMutumT/index.html';
 });
 
 
@@ -113,90 +113,99 @@ function getCollection(){
  }
 
 
+
  //============== function numtostr ====================
 
- function numtostr(a, e, r, t) {
-  let n = ""
-    , h = j = 0
-    , u = tamanho2 = 0
-    , l = ajd2 = ""
-    , o = window.Event ? t.which : t.keyCode;
-  if (13 == o || 8 == o)
-      return !0;
-  if (n = String.fromCharCode(o),
-  -1 == "0123456789".indexOf(n))
-      return !1;
-  for (u = a.value.length,
-  h = 0; h < u && ("0" == a.value.charAt(h) || a.value.charAt(h) == r); h++)
-      ;
-  for (l = ""; h < u; h++)
-      -1 != "0123456789".indexOf(a.value.charAt(h)) && (l += a.value.charAt(h));
-  if (l += n,
-  0 == (u = l.length) && (a.value = ""),
-  1 == u && (a.value = "0" + r + "0" + l),
-  2 == u && (a.value = "0" + r + l),
-  u > 2) {
-      for (ajd2 = "",
-      j = 0,
-      h = u - 3; h >= 0; h--)
-          3 == j && (ajd2 += e,
-          j = 0),
-          ajd2 += l.charAt(h),
-          j++;
-      for (a.value = "",
-      tamanho2 = ajd2.length,
-      h = tamanho2 - 1; h >= 0; h--)
-          a.value += ajd2.charAt(h);
-      a.value += r + l.substring(u - 2, u)
+
+function numtostr(str,n) {
+	var elemento = document.getElementsByTagName('input')[n];
+	var valor = elemento.value;
+  
+	valor = valor + '';
+	valor = parseInt(valor.replace(/[\D]+/g, ''));
+  
+	if(valor.toString().length === 1) {
+	  valor = '0,' + valor;
+	} else {
+	  valor = valor + '';
+	  valor = valor.replace(/([0-9]{2})$/g, ",$1");
+	  
+	  if (valor.length > 6) {
+		valor = valor.replace(/([0-9]{3}),([0-9]{2}$)/g, ".$1,$2");  
+	  }
+	}
+	
+	elemento.value = valor;
+	if(valor == 'NaN') elemento.value = '';
   }
-  return !1
-}
-//---------------------------------------------------------------------------
 
+ //============== function numtostring ====================
 
-//  function numtostr(str,n) {
+  function numtostring(str,n) {
 
-//     var elemento = document.getElementsByTagName('input')[n];
-//     var valor = (elemento.value);
+     var elemento = document.getElementsByTagName('input')[n];
+     var valor = (elemento.value);
     
 
-//     valor = valor + "";
-//     valor = parseInt(valor.replace(/[\D]+/g, ''));
-//     valor = valor + '';
-//     valor = valor.replace(/([0-9]{2})$/g, ",$1");
+     valor = valor + "";
+     valor = parseInt(valor.replace(/[\D]+/g, ''));
+     valor = valor + '';
+     valor = valor.replace(/([0-9]{2})$/g, ",$1");
 
-//     if (valor.length > 6) {
-//       valor = valor.replace(/([0-9]{3}),([0-9]{2}$)/g, ".$1,$2");  
-//     }
+     if (valor.length > 6) {
+       valor = valor.replace(/([0-9]{3}),([0-9]{2}$)/g, ".$1,$2");  
+     }
 
-//     elemento.value = valor;
-//     if(valor == 'NaN') elemento.value = '';
-// }
+     elemento.value = valor;
+     if(valor == 'NaN') elemento.value = '';
+ }
 // =============== function Faixa terceiro lado triangulo  =======================
 
 function calcularComprimentoMinMax(lado1, lado2) {
   var comprimentoMinimo = Math.abs(lado1 - lado2) + 1;
   var comprimentoMaximo = lado1 + lado2 - 1
   
-  return { minimo__:  comprimentoMinimo.toFixed(1),      maximo__: comprimentoMaximo.toFixed(2) };
+  return {'min':  comprimentoMinimo.toFixed(1),'max': comprimentoMaximo.toFixed(1) };
  
 }
 
- //============== function ====================
+ //============== function ret ====================
 
 
-function retornarObjeto() {
-  return { nome: "João", idade: 25 };
-}
-
-
-
- //============== function numtostr ====================
+ //============== function  calcHypotenuse====================
    function calcHypotenuse(a, b) {
    hTN =( Math.sqrt((a * a) + (b * b)));
    return hTN.toFixed(2)
 }
- //============== function numtostr ====================
+// ==================================================================
+function menorValor(a, b) {
+  if (a < b) {
+    return a;
+  } else {
+    return b;
+  }
+}
+// ==================================================================
+function maiorValor(a, b) {
+  return (Math.max(a, b));
+}
+// ==================================================================
+function criarArrayDeDoisArrays(a, b) {
+  let array1 = a;
+  let array2 = b;
+  let arrayDeDoisArrays = [array1, array2];
+  return arrayDeDoisArrays;
+}
+// ==================================================================
+function escreverArrayNoInput(arrayDeArrays) {
+  // Transforma o array de arrays em uma única string, separando cada elemento por vírgula
+  const conteudo = arrayDeArrays.flat().join(", ");
+  
+  // Define o valor do elemento de entrada para a string gerada acima
+  return  conteudo;
+}
+
+
 
 //---------------------------------------------
 // ================ Funcao show ======   
@@ -231,7 +240,7 @@ function show() {
       imagem.src = pic[2];
       document.getElementById("i2").style.display = 'block';
 
-      document.getElementById("in1").placeholder = "Diametro Menor";
+      document.getElementById("in1").placeholder = "Diametro Maior";
       document.getElementById("in2").placeholder = "Diametro Maior";
   }
           
@@ -241,10 +250,10 @@ function show() {
       imagem.src = pic[3];
       document.getElementById('i3').style.display = 'block';
       clearLines('irr');
-      document.getElementById("in1").placeholder = "Lado 1";
-      document.getElementById("in2").placeholder = "Lado 2";
-      document.getElementById("in3").placeholder = "Lado 3";
-      document.getElementById("in4").placeholder = "Lado 4";
+      document.getElementById("in1").placeholder = "Lado 1 (1° menor)";
+      document.getElementById("in2").placeholder = "Lado 2 (2° menor)";
+      document.getElementById("in3").placeholder = "Lado 3 (3° menor)";
+      document.getElementById("in4").placeholder = "Lado 4 (maior)";
       document.getElementById("in5").placeholder = "Hipotenusa";
   
   }
@@ -292,39 +301,41 @@ function show() {
         // perimetroTiangulo = l1+l2+l3;
         // semiPerimetro = sP (l1+l2+l3)/2;
         // Area Triangulo Heron = Math.sqrt(sP(sP-l1)(sP)(sP))
-        var faixaIrr = calcularComprimentoMinMax(in1TN, in2TN);
-        var faixaIrrV =  JSON.stringify(faixaIrr);
-        let v1 = faixaIrr.minimo__;
-        let v2 = faixaIrr.maximo__;
-        // resultado.value = v1 + " " +v2;
+        // var faixaIrr = calcularComprimentoMinMax(in1TN, in2TN);
+        // resultado.value = JSON.stringify(faixaIrr);
+
+        var  faixaIrr  =  calcularComprimentoMinMax ( in1TN ,  in3TN ) ;
+        var  faixaIrrV  =   JSON . stringify ( faixaIrr ) ;
+        let  vmin  =  faixaIrr . minimo__ ;
+        let  vmax  =  faixaIrr . maximo__ ;
+
         resultado.value = faixaIrrV;
 
-         if ( in5TN !==0 && in5TN <v1 || in5TN > v2 ) {
-        resultado.value = "Medida hipotenusa errada";
-         }
-        else 
-
-        if (in1TN !== 0 && in2TN !== 0 && in3TN !== 0 && in4TN !== 0 && in5TN !== 0){
         
-          // var hTN = Math.hypot(parseFloat(in1TN), parseFloat(in2TN));
+        
+         if (in1TN !== 0 && in2TN !== 0 && in3TN !== 0 && in4TN !== 0 && in5TN !== 0){
+        
+        var sPT1TN = (in1TN/2 + in2TN/2 + in5TN/2);   
+        var aT1 = (sPT1TN*((sPT1TN-in1TN)*(sPT1TN-in2TN)*(sPT1TN-in5TN)));
 
-
-          var sPT1TN = (in1TN/2 + in2TN/2 + in5TN/2);   
-           var aT1 = (sPT1TN*((sPT1TN-in1TN)*(sPT1TN-in2TN)*(sPT1TN-in5TN)));
-         
+        if (aT1 >0){
+          
           var areaT1 = Math.sqrt(aT1);
 
           var sPT2TN = (in3TN/2 + in4TN/2 + in5TN/2);
           var aT2 = (sPT2TN*(sPT2TN-in3TN)*(sPT2TN-in4TN)*(sPT2TN-in5TN));
-          var areaT2 = Math.sqrt(aT1);
+          var areaT2 = Math.sqrt(aT2);
           var aTotal = (areaT1 + areaT2);
-        
-
+  
           var aTotBr = numberToBr(aTotal);
           resultado.value = (aTotBr);
+        }
+        else
+        resultado.value = 'Ajuste valor Hipotenusa' ;
+       
         
-
-        }}
+     }}
+      
 
         if(option_from === "tri") {     
           //  Fomula Heron
@@ -341,24 +352,26 @@ function show() {
              
         
            var aT1 = (sPT1TN*((sPT1TN-in1TN)*(sPT1TN-in2TN)*(sPT1TN-in3TN)));
-           var areaT1 = (Math.sqrt(aT1)).toFixed(2);
            if (aT1 <= 0) {
-            resultado.value = "Medida Lado3 Errada";
-           }
-           else 
-
-
-            // var areaT1Br = numtobr(areaT1);
-            // var aT2 = (sPT2TN*(sPT2TN-in3TN)*(sPT2TN-in4TN)*(sPT2TN-in5TN));
-            // var areaT2 = Math.sqrt(aT1);
-            // var aTotal = areaT1 + areaT2;
-            // resultado.value = aT1;
+            resultado.value = 'Medida Lado 3 Errada';
+            } 
+          if (aT1 >= 0) {
           
-            resultado.value = aT1;
-          
-  
+          // var aT2 = (sPT2TN*(sPT2TN-in3TN)*(sPT2TN-in4TN)*(sPT2TN-in5TN));
+          // var areaT2 = Math.sqrt(aT1);
+          // var aTotal = areaT1 + areaT2;
+          // resultado.value = aT1;
+          console.log(aT1);
+            
+          var areaT1 = (Math.sqrt(aT1));
+          console.log(areaT1);
 
-      
+         
+
+          var areaT1Br = numberToBr(areaT1);
+          console.log(areaT1Br);
+        
+          resultado.value = areaT1Br;
       }
     }
-  }
+  }}
